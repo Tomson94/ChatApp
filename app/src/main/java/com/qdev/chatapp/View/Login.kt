@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProviders
+import com.google.firebase.FirebaseApp
 import com.qdev.chatapp.Model.User
 import com.qdev.chatapp.R
 import com.qdev.chatapp.Service.NewMessageService
@@ -27,13 +28,13 @@ class Login : AppCompatActivity() {
         var btn_login  = this.login
         var go_to_registration = this.gotoreg
         var viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-
+        FirebaseApp.getApps(this)
 
         var intent = Intent(applicationContext,NewMessageService::class.java)
         if (android.os.Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
-        startForegroundService(intent)
+        this.startForegroundService(intent)
         else
-            startService(intent)
+            this.startService(intent)
 
         if(Utils.getMyPrefference(applicationContext,"status").equals("1")){
             var intent = Intent(this, Contacts::class.java)
