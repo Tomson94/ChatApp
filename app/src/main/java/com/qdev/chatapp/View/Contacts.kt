@@ -48,7 +48,7 @@ class Contacts : AppCompatActivity() {
     private fun doInUpdates(uselist: ListView?, textView: TextView?, result: List<String>?, pd: ProgressDialog) {
 
         if (result != null) {
-            if (result.size <= 1) {
+            if (result.size <= 0) {
 
                 textView!!.visibility = View.VISIBLE
                 if (uselist != null) {
