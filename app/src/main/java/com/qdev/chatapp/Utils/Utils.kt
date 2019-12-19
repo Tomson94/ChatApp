@@ -6,7 +6,7 @@ import android.view.Display
 
 class Utils {
     object Util {
-       var URL ="https://chatapp-63c24.firebaseio.com/Users.json"
+       var URL ="https://chatappwithchatlibrary.firebaseio.com/Users.json"
     }
     object LoggedInUser{
         var name:String = ""
